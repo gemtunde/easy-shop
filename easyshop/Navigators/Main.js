@@ -3,6 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
+import CartIcon from "../shared/CartIcon";
+
 // Stacks
 import HomeNavigator from "./HomeNavigator";
 import CartNavigator from "./CartNavigator";
@@ -15,7 +17,6 @@ import CartNavigator from "./CartNavigator";
 const Tab = createBottomTabNavigator();
 
 const Main = () => {
-
   //const context = useContext(AuthGlobal)
 
   return (
@@ -29,7 +30,7 @@ const Main = () => {
     >
       <Tab.Screen
         name="Home"
-       component={HomeNavigator}
+        component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <Icon name="home" color={color} size={30} />
@@ -38,23 +39,23 @@ const Main = () => {
       />
       <Tab.Screen
         name="Cart"
-       // component={CartNavigator}
-       component={CartNavigator}
+        // component={CartNavigator}
+        component={CartNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <View>
               <Icon name="shopping-cart" color={color} size={30} />
-              {/* <CartIcon /> */}
+              <CartIcon />
             </View>
           ),
         }}
       />
-      
+
       {/* {context.stateUser.user.isAdmin == true ? ( */}
-        <Tab.Screen
+      <Tab.Screen
         name="Admin"
-       // component={AdminNavigator}
-       component={HomeNavigator}
+        // component={AdminNavigator}
+        component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <Icon name="cog" color={color} size={30} />
@@ -62,11 +63,11 @@ const Main = () => {
         }}
       />
       {/* ): null } */}
-      
+
       <Tab.Screen
         name="User"
-      //  component={UserNavigator}
-      component={HomeNavigator}
+        //  component={UserNavigator}
+        component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <Icon name="user" color={color} size={30} />
