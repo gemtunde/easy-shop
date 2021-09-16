@@ -80,10 +80,10 @@ const Confirm = (props) => {
   const mapDispatchToProps = (dispatch)=> {
     return{
 
-      clearCart: () => dispatch(actions.clearCart())
+      clearCart: () => dispatch(actions.clearCart()),
     }
   }
-export default connect(mapDispatchToProps)(Confirm);
+export default connect(null, mapDispatchToProps)(Confirm);
 
 const styles = StyleSheet.create({
   container: {
